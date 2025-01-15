@@ -1,0 +1,28 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clean up disk space
+      run: sudo rm -rf "/opt/ghc" && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf $AGENT_TOOLSDIRECTORY
+    - name: Set up OpenJDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v4.5
+      with:
+        maven-version: 3.9.5
+    - name: Checkout
+      uses: actions/checkout@v4
+    - uses: education/autograding@v1

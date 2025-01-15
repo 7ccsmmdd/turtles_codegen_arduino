@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.inf.mdd4.turtles
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.kcl.inf.mdd4.turtles
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uk.ac.kcl.inf.mdd4.turtles; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ io.github.classgraph;bundle-version="4.8.149",
+ org.aopalliance;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: uk.ac.kcl.inf.mdd4.parser.antlr,
+ uk.ac.kcl.inf.mdd4.parser.antlr.internal,
+ uk.ac.kcl.inf.mdd4.serializer,
+ uk.ac.kcl.inf.mdd4.services,
+ uk.ac.kcl.inf.mdd4.turtles,
+ uk.ac.kcl.inf.mdd4.turtles.impl,
+ uk.ac.kcl.inf.mdd4.turtles.util,
+ uk.ac.kcl.inf.mdd4,
+ uk.ac.kcl.inf.mdd4.generator,
+ uk.ac.kcl.inf.mdd4.scoping,
+ uk.ac.kcl.inf.mdd4.validation
+Import-Package: org.apache.log4j

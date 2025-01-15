@@ -1,0 +1,67 @@
+/* XPECT_SETUP uk.ac.kcl.inf.mdd4.tests.generator.files.FilesTest  END_SETUP */
+
+/* 
+
+XPECT generated file someFile.turtles.xt/someFile.turtles.xt.ino ---
+#include <Arduino.h>
+
+#define MOTOR_A_PWM 13 //D7 A-1A
+#define MOTOR_A_DIR 5  //D1 A1-B
+#define MOTOR_B_PWM 14 //D5 B-1A
+#define MOTOR_B_DIR 12 //D6 B-1B
+#define PWM_SLOW 1000  // slow speed PWM duty cycle
+// for full batteries PWM_SLOW 700 should be better
+		
+void setup() {
+
+  Serial.begin(115200);
+
+  pinMode( MOTOR_B_DIR, OUTPUT );
+  pinMode( MOTOR_B_PWM, OUTPUT );
+  digitalWrite( MOTOR_B_DIR, LOW );
+  digitalWrite( MOTOR_B_PWM, LOW );
+
+  pinMode( MOTOR_A_DIR, OUTPUT );
+  pinMode( MOTOR_A_PWM, OUTPUT );
+  digitalWrite( MOTOR_A_DIR, LOW );
+  digitalWrite( MOTOR_A_PWM, LOW );
+}
+
+void loop() {
+backA();
+backB();
+delay(0);
+}
+
+void forwardA() {
+  digitalWrite( MOTOR_A_DIR, HIGH ); // direction = forward
+  analogWrite( MOTOR_A_PWM, 1023-PWM_SLOW ); // PWM speed = slow
+}
+void forwardB() {
+  digitalWrite( MOTOR_B_DIR, HIGH ); // direction = forward
+  analogWrite( MOTOR_B_PWM, 1023-PWM_SLOW ); // PWM speed = slow
+}
+
+void stopA() {
+  digitalWrite( MOTOR_A_DIR, LOW ); // direction = forward
+  digitalWrite( MOTOR_A_PWM, LOW ); // PWM speed = slow
+}
+void stopB() {
+  digitalWrite( MOTOR_B_DIR, LOW ); // direction = forward
+  digitalWrite( MOTOR_B_PWM, LOW ); // PWM speed = slow
+}
+
+void backA() {
+  digitalWrite( MOTOR_A_DIR, LOW ); // direction = forward
+  analogWrite( MOTOR_A_PWM, PWM_SLOW ); // PWM speed = slow
+}
+void backB() {
+  digitalWrite( MOTOR_B_DIR, LOW ); // direction = forward
+  analogWrite( MOTOR_B_PWM, PWM_SLOW ); // PWM speed = slow
+}
+
+---
+
+*/
+
+backward (0)

@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Content Test",
+      "setup": "",
+      "run": "mvn -q -B -DfailIfNoTests=false -Dtest=ContentTest verify",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "File name generation test",
+      "setup": "",
+      "run": "mvn -q -B -DfailIfNoTests=false -Dtest=FilesTest verify",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Test of combining commands and folding constants",
+      "setup": "",
+      "run": "mvn -q -B -DfailIfNoTests=false -Dtest=CombinationTest verify",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
